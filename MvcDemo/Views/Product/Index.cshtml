@@ -1,0 +1,29 @@
+﻿@using MvcDemo.DAL.Entities
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün Adı</th>
+        <th>Fiyatı</th>
+        <th>Stok Adedi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.ProductID</td>
+    <td>@x.ProductName</td>
+    <td>@x.Price</td>
+    <td>@x.Stock</td>
+    <td><a href="/Product/DeleteProduct/@x.ProductID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Product/EditProduct/@x.ProductID" class="btn btn-success">Güncelle</a></td>
+</tr>
+    }
+</table>
+

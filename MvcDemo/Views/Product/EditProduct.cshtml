@@ -1,0 +1,25 @@
+﻿@using MvcDemo.DAL.Entities
+@model Product
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h1>Ürün Güncelleme Sayfası</h1>
+
+<form method="post">
+    <label>Ürün ID</label>
+    <input type="text" asp-for="@Model.ProductID" class="form-control" />
+    <br />
+    <label>Ürün Adı</label>
+    <input type="text" asp-for="@Model.ProductName" class="form-control" />
+    <br />
+    <label>Ürün Stok Adedi</label>
+    <input type="text" asp-for="@Model.Stock" class="form-control" />
+    <br />
+    <label>Ürün Fiyat</label>
+    <input type="text" asp-for="@Model.Price" class="form-control" />
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+
